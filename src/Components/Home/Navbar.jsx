@@ -17,7 +17,7 @@ const Navbar = () => {
         <NavLink>Event Portfolio</NavLink>
       </li>
       <li>
-        <NavLink>Booked</NavLink>
+        <NavLink>Our location</NavLink>
       </li>
     </>
   );
