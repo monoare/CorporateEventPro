@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Corporate Event Planning",
+    "image": "https://i.ibb.co/dgsF4CT/corporate-event-planner.jpg",
+    "price": "Starting at $1,700",
+    "description": " Our Corporate Event Planning service takes the stress out of organizing your event. Our team of seasoned professionals will work with you to design, plan, and execute a corporate event that aligns with your goals and brand. We handle every detail, from selecting the perfect venue to coordinating logistics and ensuring a flawless experience.",
+    "included_services": "Event concept development, budget management, vendor coordination, on-site event management, post-event evaluation.",
+    "button_text": "Learn More"
+  },
+  {
+    "id": 2,
+    "name": "Venue Selection and Management",
+    "image": "https://i.ibb.co/Kjr0VFB/Venue-Selection-and-Management.jpg",
+    "price": "Starting at $2,500",
+    "description": "Choosing the right venue is crucial for your corporate event's success. Our Venue Selection and Management service involves finding the ideal location, negotiating contracts, and overseeing all aspects of venue logistics,        including setup, decor, and technical requirements.",
+    "included_services": "Venue scouting, contract negotiation, seating arrangement, decor planning.",
+    "button_text": "Explore Options"
+  },
+  {
+    "id": 3,
+    "name": "Catering and Menu Design",
+    "image": "https://i.ibb.co/Q9t5S1j/Catering-Services-Menu.jpg",
+    "price": "Starting at $1,000",
+    "description": "Impress your guests with our Catering and Menu Design service. Our expert chefs craft customized menus that cater to your preferences and dietary requirements. From appetizers to desserts, we ensure a delightful culinary experience.",
+    "included_services": "Menu creation, food tasting, beverage selection, catering staff.",
+    "button_text": "See Menu Options"
+  },
+  {
+    "id": 4,
+    "name": "Audio-Visual Production",
+    "image": "https://i.ibb.co/Kq241Hp/Audio-Visual-Production.jpg",
+    "price": "Starting at $1,500",
+    "description": "Elevate your corporate event with our Audio-Visual Production service. We provide cutting-edge audio and visual equipment, lighting, and technical expertise to ensure your presentations, speeches, and entertainment shine.",
+    "included_services": "AV equipment rental, sound engineering, lighting design, technical support.",
+    "button_text": "Get AV Details"
+  },
+  {
+    "id": 5,
+    "name": "Guest Speaker Booking",
+    "image": "https://i.ibb.co/wzmq0qb/Guest-Speaker-Booking.jpg",
+    "price": "Starting at $2,100",
+    "description": "Enhance your event's impact with our Guest Speaker Booking service. We have access to a diverse network of renowned speakers and industry experts who can inspire, educate, and engage your audience.",
+    "included_services": "Speaker selection, contract negotiation, travel and accommodation coordination.",
+    "button_text": "Book a Speaker"
+  },
+  {
+    "id": 6,
+    "name": "On-site Event Management",
+    "image": "https://i.ibb.co/hVgzPgV/On-site-Event-Management.jpg",
+    "price": "Starting at $1,200",
+    "description": "Enjoy a seamless event day experience with our On-site Event Management service. Our experienced on-site managers oversee all event operations, ensuring that everything runs smoothly. You can focus on your guests while we take care of the details.",
+    "included_services": "Event day coordination, logistics management, issue resolution.",
+    "button_text": "Request On-site Support"
+  }
+]
