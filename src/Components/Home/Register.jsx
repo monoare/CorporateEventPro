@@ -4,6 +4,7 @@ import { BsApple } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import backgroundImage from "../../assets/login.jpg";
 import { NavLink } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -19,12 +20,15 @@ const Register = () => {
   };
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-gray-100"
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100"
       style={{
         backgroundImage: "url(https://i.ibb.co/XtCFQxT/Home.jpg)",
         backgroundSize: "cover",
       }}
     >
+      <div>
+        <Navbar></Navbar>
+      </div>
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-xl text-center font-semibold mb-6 text-[#E30E31]">
           Register to CorporateEventPro

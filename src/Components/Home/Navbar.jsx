@@ -8,7 +8,9 @@ const Navbar = () => {
   const navlinks = (
     <>
       <li>
-        <NavLink className="text-lg text-[#E30E31] font-semibold">Home</NavLink>
+        <NavLink to="/" className="text-lg text-[#E30E31] font-semibold">
+          Home
+        </NavLink>
       </li>
       <li>
         <NavLink

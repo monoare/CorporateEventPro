@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -19,12 +20,16 @@ function LoginPage() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-gray-100"
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100"
       style={{
         backgroundImage: "url(https://i.ibb.co/XtCFQxT/Home.jpg)",
         backgroundSize: "cover",
       }}
     >
+      <div>
+        <Navbar></Navbar>
+      </div>
+
       <div className=" p-8 border-2 rounded shadow-md w-96">
         <h2 className="text-2xl text-center font-semibold mb-6 text-[#E30E31]">
           Login to CorporateEventPro
