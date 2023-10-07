@@ -19,7 +19,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/stories">
+        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/reviews">
           Client Success Stories
         </NavLink>
       </li>

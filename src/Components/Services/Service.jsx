@@ -1,11 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Service = ({ event }) => {
   const { id } = event;
-  const handleClick = () => {
-    console.log("clicked");
-  };
 
   return (
     <div>
@@ -17,10 +13,8 @@ const Service = ({ event }) => {
           <h2 className="card-title">{event.name}</h2>
           <p>{event.description}</p>
           <div className="card-actions justify-end">
-            <Link to={`/details/${id}`}>
-              <button onClick={handleClick} className="btn btn-primary w-full">
-                View Details
-              </button>
+            <Link className="btn w-full" to={`/details/${id}`}>
+              {event.button_text}
             </Link>
           </div>
         </div>

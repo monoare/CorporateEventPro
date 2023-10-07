@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "client": "Sarah D.",
+    "service": "Corporate Event Planning",
+    "review": "Working with CorporateEventPro was a game-changer for our company. Their event planning team made our annual conference a huge success. From the stunning venue to the seamless execution, we couldn't have asked for more.",
+    "image": "https://i.ibb.co/fFpqCcv/Sarah-D.jpg",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "client": "Michael L.",
+    "service": "Venue Selection and Management",
+    "review": "The Venue Selection and Management service exceeded our expectations. CorporateEventPro helped us find the perfect venue, negotiated great deals, and transformed it into a beautiful space. Our guests were impressed!",
+    "image": "https://i.ibb.co/qyDRgDC/Michael-L.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "client": "Emily H.",
+    "service": "Catering and Menu Design",
+    "review": "The catering by CorporateEventPro was exceptional. The menu they designed was not only delicious but also beautifully presented. The food was a highlight of our event, and our guests are still talking about it.",
+    "image": "https://i.ibb.co/kQhW361/Emily-H.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 4,
+    "client": "David R.",
+    "service": "Audio-Visual Production",
+    "review": "Our event's AV setup, thanks to CorporateEventPro, was outstanding. The equipment and technical support they provided ensured that our presentations were flawless. The lighting added a touch of magic to the event.",
+    "image": "https://i.ibb.co/B26L1pS/David-R.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "client": "Lisa M.",
+    "service": "Guest Speaker Booking",
+    "review": "Booking a guest speaker through CorporateEventPro was a game-changer. The speaker they brought in was inspiring and left a lasting impact on our audience. It elevated our event to a whole new level.",
+    "image": "https://i.ibb.co/ysqV2dM/Lisa-M.jpg",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "client": "John B.",
+    "service": "On-site Event Management",
+    "review": "CorporateEventPro's on-site event management was a lifesaver. Their team handled every detail, and I could relax and enjoy the event. Any issues that arose were resolved swiftly. Highly recommended!",
+    "image": "https://i.ibb.co/SfdLRmS/John-B.jpg",
+    "rating": 4.6
+  }
+]
