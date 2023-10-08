@@ -1,4 +1,7 @@
-import home from "../../assets/Home.jpg";
+import Footer from "../Footer/Footer";
+import Location from "../Location/Location";
+import Reviews from "../Reviews/Reviews";
+import Services from "../Services/Services";
 import Navbar from "./Navbar";
 
 const Home = () => {
@@ -27,6 +30,13 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="mt-10">
+        <Services></Services>
+      </div>
+
+      <Reviews></Reviews>
+      <Location></Location>
+      <Footer></Footer>
     </div>
   );
 };

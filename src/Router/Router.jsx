@@ -3,10 +3,11 @@ import Root from "../Layout/Root";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Home/Login";
 import Register from "../Components/Home/Register";
-import Services from "../Components/Services/Services";
 import Details from "../Components/ServiceDetails/Details";
 import LocationPage from "../Components/Location/LocationPage";
-import Reviews from "../Components/Reviews/Reviews";
+import ServicePage from "../Components/Services/ServicePage";
+import ReviewPage from "../Components/Reviews/ReviewPage";
+import Portfolio from "../Components/Portfolio/Portfolio";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Services></Services>,
+        element: <ServicePage></ServicePage>,
       },
       {
         path: "/login",
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/reviews",
-        element: <Reviews></Reviews>,
+        element: <ReviewPage></ReviewPage>,
+      },
+      {
+        path: "/portfolio",
+        element: <Portfolio></Portfolio>,
       },
     ],
   },
