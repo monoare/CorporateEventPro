@@ -1,7 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/corporateeventpro-low-resolution-color-logo.png";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const [userLogin, setUserLogin] = useState(false);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => console.log("user logged out successfully"))
+      .catch((error) => console.error(error));
+  };
+
   const cyanButtonStyle = {
     backgroundColor: "#E30E31",
   };
@@ -42,8 +53,17 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/login">
-          Login
+        <NavLink
+          onClick={() => {
+            if (user) {
+              handleLogOut(); // Call handleLogout if the user is logged in
+            }
+            setUserLogin(!userLogin);
+          }}
+          className="text-lg text-[#E30E31] font-semibold"
+          to="/login"
+        >
+          {user ? "Logout" : "Login"} {/* Toggle between Login and Logout */}
         </NavLink>
       </li>
       <li>
@@ -88,6 +108,15 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
+      </div>
+      <div className="flex flex-col">
+        {user && (
+          <>
+            <img className="rounded-full w-10" src={user?.photoURL} alt="" />
+            <span>{user?.displayName}</span>
+            <span>{user?.email}</span>
+          </>
+        )}
       </div>
     </div>
   );

@@ -8,11 +8,13 @@ import LocationPage from "../Components/Location/LocationPage";
 import ServicePage from "../Components/Services/ServicePage";
 import ReviewPage from "../Components/Reviews/ReviewPage";
 import Portfolio from "../Components/Portfolio/Portfolio";
+import Page404 from "../Components/ErrorPage/Page404";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Page404></Page404>,
     children: [
       {
         path: "/",

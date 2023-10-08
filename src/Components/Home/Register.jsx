@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { AuthContext } from "../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,8 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [registerError, setRegisterError] = useState("");
-  const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const { createUser, googleUser, gitHubUser } = useContext(AuthContext);
@@ -24,8 +22,6 @@ const Register = () => {
     const accepted = e.target.terms.checked;
 
     // reset error and success
-    setRegisterError("");
-    setSuccess("");
 
     if (password.length < 6) {
       toast.error("Password should be at least 6 characters or longer.");

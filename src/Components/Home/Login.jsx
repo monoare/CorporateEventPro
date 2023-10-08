@@ -1,21 +1,65 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import { AuthContext } from "../Provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const { loginWithEmail, googleUser, gitHubUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    // Here, you would typically send a request to your backend for authentication
-    // You can use a library like Axios to make API requests.
-    // For simplicity, we'll just log the email and password for demonstration.
-    console.log("Email:", email);
-    console.log("Password:", password);
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // password validation
+    if (password.length < 6) {
+      toast.error("Password should be at least 6 characters");
+      return;
+    }
+
+    // Attempt to login with email
+    loginWithEmail(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+        // Check if the error message indicates incorrect credentials
+        if (error.code === "auth/invalid-login-credentials") {
+          toast.error("Incorrect password");
+        } else {
+          // Show a generic error message using toast
+          toast.error("Login failed. Please check your email and password.");
+        }
+      });
+  };
+  // Attempt to login with google
+  const handleGoogleLogin = () => {
+    googleUser()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  // Attempt to login with Github
+  const handleGitHubLogin = () => {
+    gitHubUser()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -36,11 +80,17 @@ function LoginPage() {
         </h2>
         <form onSubmit={handleLogin}>
           <div>
-            <button className="flex items-center w-full border bg-[#E30E31] border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4">
+            <button
+              onClick={handleGoogleLogin}
+              className="flex items-center w-full border bg-[#E30E31] border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4"
+            >
               <FcGoogle className="text-2xl"></FcGoogle>
               <p className="mx-auto text-white">Continue with Google</p>
             </button>
-            <button className="flex items-center w-full border bg-[#E30E31] border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4">
+            <button
+              onClick={handleGitHubLogin}
+              className="flex items-center w-full border bg-[#E30E31] border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4"
+            >
               <FaGithub className="text-2xl"></FaGithub>
               <p className="mx-auto text-white">Continue with GitHub</p>
             </button>
@@ -57,22 +107,20 @@ function LoginPage() {
           <div className="mb-4">
             <input
               type="email"
+              name="email"
               id="email"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <div className="mb-4">
             <input
               type="password"
+              name="password"
               id="password"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -94,6 +142,7 @@ function LoginPage() {
             </NavLink>
           </p>
         </form>
+        <ToastContainer position="top-center" />
       </div>
     </div>
   );
