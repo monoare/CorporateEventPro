@@ -21,32 +21,32 @@ const Navbar = () => {
   const navlinks = (
     <>
       <li>
-        <NavLink to="/" className="text-lg font-semibold">
+        <NavLink to="/" className="lg:text-lg  font-semibold">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/services">
+        <NavLink className="lg:text-lg font-semibold" to="/services">
           Services
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/reviews">
-          Client Success Stories
+        <NavLink className="lg:text-lg font-semibold" to="/reviews">
+          Reviews
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/portfolio">
+        <NavLink className="lg:text-lg font-semibold" to="/portfolio">
           Event Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/blogs">
+        <NavLink className="lg:text-lg font-semibold" to="/blogs">
           Blogs
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/location">
+        <NavLink className="lg:text-lg font-semibold" to="/location">
           Our location
         </NavLink>
       </li>
@@ -58,14 +58,14 @@ const Navbar = () => {
             }
             setUserLogin(!userLogin);
           }}
-          className="text-lg font-semibold"
+          className="lg:text-lg font-semibold"
           to="/login"
         >
           {user ? "Logout" : "Login"} {/* Toggle between Login and Logout */}
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold" to="/register">
+        <NavLink className="lg:text-lg font-semibold" to="/register">
           Register
         </NavLink>
       </li>
@@ -75,7 +75,7 @@ const Navbar = () => {
     <div className="navbar ">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn bg-[#E30E31] lg:hidden">
+          <label tabIndex={0} className="btn bg-[#E30E31] md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -99,9 +99,9 @@ const Navbar = () => {
             {navlinks}
           </ul>
         </div>
-        <img className="w-1/2" src={logo} alt="" />
+        <img className="md:w-1/2 ml-10" src={logo} alt="" />
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
       </div>
       <div className="flex flex-col">

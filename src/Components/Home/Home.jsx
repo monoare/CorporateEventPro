@@ -35,19 +35,21 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-10">
+        <p className="text-center text-2xl md:text-4xl font-bold mb-5">
+          Our Available Services for YOU
+        </p>
         <Services></Services>
       </div>
 
-      <div className="md:mb-44 md:pb-20">
+      <div className="mt-44 md:mt-0 md:mb-44 md:pb-20">
+        <p className="text-center text-2xl md:text-4xl font-bold mb-5">
+          Sweet Reviews
+        </p>
         <Reviews></Reviews>
       </div>
       <div className="md:mt-20">
         <p className="text-center text-4xl font-bold">Event Portfolio</p>
         <Portfolio></Portfolio>
-      </div>
-      <div>
-        <p>Our Location</p>
-        <Location></Location>
       </div>
       <Footer></Footer>
     </div>
