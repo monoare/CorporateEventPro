@@ -1,6 +1,7 @@
 import React from "react";
 import Reviews from "./Reviews";
 import Navbar from "../Home/Navbar";
+import Footer from "../Footer/Footer";
 
 const ReviewPage = () => {
   return (
@@ -10,6 +11,9 @@ const ReviewPage = () => {
       </div>
       <div>
         <Reviews></Reviews>
+      </div>
+      <div className="mt-10">
+        <Footer></Footer>
       </div>
     </div>
   );
