@@ -74,8 +74,8 @@ function LoginPage() {
         <Navbar></Navbar>
       </div>
 
-      <div className="p-8 border-2 rounded shadow-md w-96">
-        <h2 className="text-2xl text-center font-semibold mb-6 text-[#E30E31]">
+      <div className="p-8 border-2 rounded shadow-md">
+        <h2 className="text-lg md:text-2xl text-center font-semibold mb-6 text-[#E30E31]">
           Login to CorporateEventPro
         </h2>
         <form onSubmit={handleLogin}>
@@ -128,11 +128,14 @@ function LoginPage() {
               Login
             </button>
           </div>
-          <p className="flex justify-center items-center text-white" href="">
+          <p
+            className="flex justify-center items-center text-white text-xs md:text-lg"
+            href=""
+          >
             Don&apos;t have an account? Please
             <NavLink
               to="/register"
-              className="underline text-xl text-white pl-1"
+              className="underline md:text-xl text-white pl-1"
             >
               Register
             </NavLink>

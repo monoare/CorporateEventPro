@@ -21,41 +21,32 @@ const Navbar = () => {
   const navlinks = (
     <>
       <li>
-        <NavLink to="/" className="text-lg text-[#E30E31] font-semibold">
+        <NavLink to="/" className="text-lg font-semibold">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className="text-lg text-[#E30E31] font-semibold"
-          to="/services"
-        >
+        <NavLink className="text-lg font-semibold" to="/services">
           Services
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/reviews">
+        <NavLink className="text-lg font-semibold" to="/reviews">
           Client Success Stories
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className="text-lg text-[#E30E31] font-semibold"
-          to="/portfolio"
-        >
+        <NavLink className="text-lg font-semibold" to="/portfolio">
           Event Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/blogs">
+        <NavLink className="text-lg font-semibold" to="/blogs">
           Blogs
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className="text-lg text-[#E30E31] font-semibold"
-          to="/location"
-        >
+        <NavLink className="text-lg font-semibold" to="/location">
           Our location
         </NavLink>
       </li>
@@ -67,17 +58,14 @@ const Navbar = () => {
             }
             setUserLogin(!userLogin);
           }}
-          className="text-lg text-[#E30E31] font-semibold"
+          className="text-lg font-semibold"
           to="/login"
         >
           {user ? "Logout" : "Login"} {/* Toggle between Login and Logout */}
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className="text-lg text-[#E30E31] font-semibold"
-          to="/register"
-        >
+        <NavLink className="text-lg font-semibold" to="/register">
           Register
         </NavLink>
       </li>
