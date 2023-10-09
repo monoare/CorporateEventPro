@@ -45,6 +45,11 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink className="text-lg text-[#E30E31] font-semibold" to="/blogs">
+          Blogs
+        </NavLink>
+      </li>
+      <li>
         <NavLink
           className="text-lg text-[#E30E31] font-semibold"
           to="/location"

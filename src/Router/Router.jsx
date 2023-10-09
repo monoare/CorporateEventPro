@@ -9,6 +9,8 @@ import ServicePage from "../Components/Services/ServicePage";
 import ReviewPage from "../Components/Reviews/ReviewPage";
 import Portfolio from "../Components/Portfolio/Portfolio";
 import Page404 from "../Components/ErrorPage/Page404";
+import PrivateRoute from "./PrivateRoute";
+import BlogsPage from "../Components/Blogs/BlogsPage";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/location",
@@ -47,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/portfolio",
         element: <Portfolio></Portfolio>,
+      },
+      {
+        path: "/blogs",
+        element: <BlogsPage></BlogsPage>,
       },
     ],
   },
