@@ -44,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/location",
-        element: <LocationPage></LocationPage>,
+        element: (
+          <PrivateRoute>
+            <LocationPage></LocationPage>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/reviews",
