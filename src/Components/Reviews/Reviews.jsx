@@ -16,7 +16,7 @@ const Reviews = () => {
   console.log(reviews);
 
   return (
-    <div className="w-[80vw] h-screen mx-auto">
+    <div className=" h-screen mx-auto">
       <AwesomeSlider>
         {reviews.map((review) => (
           <div key={review.id}>
@@ -24,14 +24,14 @@ const Reviews = () => {
               <div className="hero-content flex-col lg:flex-row">
                 <img
                   src={review.image}
-                  className="max-w-sm h-full rounded-lg shadow-2xl"
+                  className="w-full md:w-[250px] lg:max-w-sm rounded-lg shadow-2xl"
                 />
                 <div>
-                  <h1 className="text-3xl font-bold">
+                  <h1 className="md:text-3xl font-bold">
                     Service:
                     <span className="text-blue-700">{review.service}</span>
                   </h1>
-                  <p className="mt-4 text-blue-700 font-semibold text-xl">
+                  <p className="mt-4 text-blue-700 font-semibold md:text-xl">
                     <span className="font-medium text-black">Client: </span>
                     {review.client}
                   </p>
@@ -41,9 +41,11 @@ const Reviews = () => {
                       <span className="text-blue-700">{review.review}</span>
                     </p>
                   </div>
-                  <div className="flex items-center mt-10">
+                  <div className="flex items-center md:mt-10">
                     <div>
-                      <p className="text-orange-400 text-2xl mr-2">Rating: </p>
+                      <p className="text-orange-400 md:text-2xl mr-2">
+                        Rating:
+                      </p>
                     </div>
                     <div>
                       <Rating

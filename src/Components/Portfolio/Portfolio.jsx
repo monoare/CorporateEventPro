@@ -15,9 +15,6 @@ const Portfolio = () => {
 
   return (
     <div>
-      <div>
-        <Navbar></Navbar>
-      </div>
       <div className="mx-4 md:mx-20 my-10 text-center md:text-2xl font-raleway font-medium">
         <p>
           Explore our portfolio to witness the artistry, attention to detail,
@@ -80,7 +77,7 @@ const Portfolio = () => {
                     </ul>
                   </div>
                   <div>
-                    <h2 className="mb-2 font-semibold text-2xl text-yellow-500">
+                    <h2 className="mb-2 font-semibold md:text-2xl text-yellow-500">
                       Services Provided:
                     </h2>
                     <ul className="ml-8 mb-2">
@@ -92,7 +89,7 @@ const Portfolio = () => {
                     </ul>
                   </div>
                   <div>
-                    <p className="mb-2 font-semibold text-2xl text-yellow-500">
+                    <p className="mb-2 font-semibold md:text-2xl text-yellow-500">
                       Testimonials:
                     </p>
                     <p className="mb-2">
@@ -100,7 +97,6 @@ const Portfolio = () => {
                       {event.testimonial.text}
                     </p>
                     <p className="mb-2">
-                      {" "}
                       <span className="text-blue-600">client: </span>
                       <span className="text-green-600 font-semibold">
                         {event.testimonial.client}
@@ -112,9 +108,6 @@ const Portfolio = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div>
-        <Footer></Footer>
       </div>
     </div>
   );

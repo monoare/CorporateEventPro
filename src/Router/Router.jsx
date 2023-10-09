@@ -7,10 +7,10 @@ import Details from "../Components/ServiceDetails/Details";
 import LocationPage from "../Components/Location/LocationPage";
 import ServicePage from "../Components/Services/ServicePage";
 import ReviewPage from "../Components/Reviews/ReviewPage";
-import Portfolio from "../Components/Portfolio/Portfolio";
 import Page404 from "../Components/ErrorPage/Page404";
 import PrivateRoute from "./PrivateRoute";
 import BlogsPage from "../Components/Blogs/BlogsPage";
+import PortfolioPage from "../Components/Portfolio/PortfolioPage";
 
 const router = createBrowserRouter([
   {
@@ -52,11 +52,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/portfolio",
-        element: <Portfolio></Portfolio>,
+        element: <PortfolioPage></PortfolioPage>,
       },
       {
         path: "/blogs",
-        element: <BlogsPage></BlogsPage>,
+        element: (
+          <PrivateRoute>
+            <BlogsPage></BlogsPage>
+          </PrivateRoute>
+        ),
       },
     ],
   },

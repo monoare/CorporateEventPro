@@ -7,11 +7,11 @@ import {
 
 const Footer = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-[40vh] bg-black">
+    <div className="flex flex-col justify-center items-center min-h-fit bg-black">
       <div className="text-center text-white">
-        <h1 className="text-5xl font-bold mt-10">Follow us</h1>
+        <h1 className="text-2xl md:text-5xl font-bold mt-10">Follow us</h1>
         <hr className="border-[#E30E31] border-2 w-2/3 mx-auto my-4" />
-        <h2 className="text-xl">
+        <h2 className="md:text-xl">
           Don&rsquo;t be uninformed. Get the latest update
         </h2>
       </div>

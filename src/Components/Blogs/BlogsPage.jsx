@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Home/Navbar";
 import Blogs from "./Blogs";
+import Footer from "../Footer/Footer";
 
 const BlogsPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -20,6 +21,9 @@ const BlogsPage = () => {
         {blogs.map((blog) => (
           <Blogs key={blog.id} blog={blog}></Blogs>
         ))}
+      </div>
+      <div>
+        <Footer></Footer>
       </div>
     </div>
   );
