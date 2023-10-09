@@ -61,73 +61,81 @@ const Register = () => {
       <div className="absolute top-4">
         <Navbar></Navbar>
       </div>
-      <div className="p-8 border-2 rounded shadow-md">
-        <h2 className="text-xl text-center font-semibold mb-6 text-[#E30E31]">
-          Register to CorporateEventPro
-        </h2>
-        <form onSubmit={handleRegister}>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
-              placeholder="Enter Your Name"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="image"
-              id="image"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
-              placeholder="Enter Your Image URL"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div className="mb-2">
-            <input type="checkbox" name="terms" id="terms" />
-            <label className="ml-2 text-white" htmlFor="terms">
-              Accept our <a href="">Terms and Conditions</a>
-            </label>
-          </div>
-          <div className="mb-4">
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none"
+      <div className="mt-20">
+        <div className="p-8 border-2 rounded shadow-md">
+          <h2 className="text-lg md:text-2xl text-center font-semibold mb-6 text-[#E30E31]">
+            Register to CorporateEventPro
+          </h2>
+          <form onSubmit={handleRegister}>
+            <div className="mb-4">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Enter Your Name"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="text"
+                name="image"
+                id="image"
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Enter Your Image URL"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div className="mb-2 text-xs md:text-xl">
+              <input type="checkbox" name="terms" id="terms" />
+              <label className="ml-2 text-white" htmlFor="terms">
+                Accept our <a href="">Terms and Conditions</a>
+              </label>
+            </div>
+            <div className="mb-4">
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none"
+              >
+                Register
+              </button>
+              <ToastContainer position="top-center" />
+            </div>
+          </form>
+          <div>
+            <p
+              className="flex justify-center items-center text-white text-xs md:text-lg"
+              href=""
             >
-              Register
-            </button>
-            <ToastContainer position="top-center" />
+              Already have an account? Please
+              <NavLink
+                to="/login"
+                className="underline md:text-xl text-white pl-1"
+              >
+                Login
+              </NavLink>
+            </p>
           </div>
-        </form>
-        <div>
-          <p className="flex justify-center items-center text-white" href="">
-            Already have an account? Please
-            <NavLink to="/login" className="underline text-xl text-white pl-1">
-              Login
-            </NavLink>
-          </p>
         </div>
       </div>
     </div>
