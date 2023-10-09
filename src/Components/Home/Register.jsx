@@ -1,25 +1,26 @@
 import { useContext, useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { BsApple } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { AuthContext } from "../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const { createUser, googleUser, gitHubUser } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    const name = form.get("name");
+    const photo = form.get("image");
     const accepted = e.target.terms.checked;
+    console.log(email, name, photo);
 
     // reset error and success
 
@@ -39,6 +40,7 @@ const Register = () => {
     // Create user
     createUser(email, password)
       .then((result) => {
+        updateProfile(result.user, { displayName: name, photoURL: photo });
         console.log(result.user);
         toast.success("User created successfully.");
         navigate("/");
@@ -48,68 +50,40 @@ const Register = () => {
       });
   };
 
-  const handleGoogleRegister = () => {
-    // create user with google
-    googleUser().then((result) => {
-      console.log(result.user).catch((error) => {
-        console.error(error);
-      });
-    });
-  };
-
-  const handleGitHubRegister = () => {
-    gitHubUser()
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => console.error(error));
-  };
-
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-100"
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 relative"
       style={{
         backgroundImage: "url(https://i.ibb.co/XtCFQxT/Home.jpg)",
         backgroundSize: "cover",
       }}
     >
-      <div>
+      <div className="absolute top-4">
         <Navbar></Navbar>
       </div>
-      <div className="bg-white p-8 rounded shadow-md w-96">
+      <div className="p-8 border-2 rounded shadow-md">
         <h2 className="text-xl text-center font-semibold mb-6 text-[#E30E31]">
           Register to CorporateEventPro
         </h2>
         <form onSubmit={handleRegister}>
-          <div>
-            {/* Google user */}
-            <button
-              onClick={handleGoogleRegister}
-              className="flex items-center w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4"
-            >
-              <FcGoogle className="text-2xl"></FcGoogle>
-              <p className="mx-auto text-gray-400">Register with Google</p>
-            </button>
-
-            {/* GitHub user */}
-            <button
-              onClick={handleGitHubRegister}
-              className="flex items-center w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4"
-            >
-              <FaGithub className="text-2xl"></FaGithub>
-              <p className="mx-auto text-gray-400">Register with GitHub</p>
-            </button>
-
-            {/* Apple user */}
-            <button className="flex items-center w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4">
-              <BsApple className="text-2xl"></BsApple>
-              <p className="mx-auto text-gray-400">Register with Apple</p>
-            </button>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+              placeholder="Enter Your Name"
+              required
+            />
           </div>
-          <div className="text-center mb-4 flex items-center">
-            <p className="border-b-2 border-gray-500 w-full mt-1"></p>
-            <p className="px-2">or</p>
-            <p className="border-b-2 border-gray-500 w-full mt-1"></p>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="image"
+              id="image"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+              placeholder="Enter Your Image URL"
+            />
           </div>
           <div className="mb-4">
             <input
@@ -133,7 +107,7 @@ const Register = () => {
           </div>
           <div className="mb-2">
             <input type="checkbox" name="terms" id="terms" />
-            <label className="ml-2" htmlFor="terms">
+            <label className="ml-2 text-white" htmlFor="terms">
               Accept our <a href="">Terms and Conditions</a>
             </label>
           </div>
@@ -148,9 +122,9 @@ const Register = () => {
           </div>
         </form>
         <div>
-          <p className="flex justify-center" href="">
-            Already have an account?
-            <NavLink to="/login" className="pl-1 underline text-blue-500">
+          <p className="flex justify-center items-center text-white" href="">
+            Already have an account? Please
+            <NavLink to="/login" className="underline text-xl text-white pl-1">
               Login
             </NavLink>
           </p>

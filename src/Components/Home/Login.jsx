@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { BsApple } from "react-icons/bs";
+
 import { FaGithub } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -74,7 +74,7 @@ function LoginPage() {
         <Navbar></Navbar>
       </div>
 
-      <div className=" p-8 border-2 rounded shadow-md w-96">
+      <div className="p-8 border-2 rounded shadow-md w-96">
         <h2 className="text-2xl text-center font-semibold mb-6 text-[#E30E31]">
           Login to CorporateEventPro
         </h2>
@@ -93,10 +93,6 @@ function LoginPage() {
             >
               <FaGithub className="text-2xl"></FaGithub>
               <p className="mx-auto text-white">Continue with GitHub</p>
-            </button>
-            <button className="flex items-center w-full border bg-[#E30E31] border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400 mb-4">
-              <BsApple className="text-2xl"></BsApple>
-              <p className="mx-auto text-white">Continue with Apple</p>
             </button>
           </div>
           <div className="text-center mb-4 flex items-center">

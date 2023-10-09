@@ -7,6 +7,8 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [userLogin, setUserLogin] = useState(false);
 
+  console.log("My new user", user);
+
   const handleLogOut = () => {
     logOut()
       .then(() => console.log("user logged out successfully"))
